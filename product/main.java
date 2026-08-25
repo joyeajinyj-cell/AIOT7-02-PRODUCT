@@ -21,16 +21,19 @@ public class Main{
         System.out.println("5. 상품 삭제");
         System.out.println("0. 프로그램 종료");
         System.out.println(":::::: 번호 입력 : ");
+        
     }
     
     /**
      * 상품 목록
     */
    public static void list() {
-        System.out.println("::::::::: 상품관리 :::::::::");
+        System.out.println("::::::::: 상품목록 :::::::::");
         productList = productService.list();
-        
+        printAll();
     }
+
+    private
 
 
     public static void main(String[] args) throws Exception{
