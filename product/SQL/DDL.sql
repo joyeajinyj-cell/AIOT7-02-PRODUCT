@@ -6,13 +6,14 @@
     등록일자
     수정일자
 */
+DROP TABLE product;
 CREATE TABLE product (
     no          NUMBER PRIMARY KEY,
     name        VARCHAR2(100) NOT NULL,
-    price       NUMBER NOT NULL DEFAULT 0 ,
+    price       NUMBER DEFAULT 0 NOT NULL,
     description CLOB,
-    created_at  DATE NOT NULL DEFAULT SYSDATE,
-    updated_at  DATE NOT NULL DEFAULT SYSDATE 
+    created_at  DATE DEFAULT SYSDATE NOT NULL,
+    updated_at  DATE DEFAULT SYSDATE NOT NULL 
 );
 
 -- 시퀀스
