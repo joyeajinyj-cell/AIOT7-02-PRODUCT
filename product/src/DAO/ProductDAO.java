@@ -34,7 +34,7 @@ public class ProductDAO extends JDBConnection {
 
         }
     } catch (Exception e) {
-        System.err.println("게시글 목록 조회 시, 예외 발생");
+        System.err.println(" 상품 목록 조회 시, 예외 발생");
         e.printStackTrace();
 
    
@@ -63,7 +63,7 @@ public Product select(int no) {
             product.setUpdatedAt(rs.getTimestamp("updated_at"));
     }
     } catch (Exception e) {
-       System.err.println("게시글 조회 시, 예외 발생");
+       System.err.println("싱품 조회 시, 예외 발생");
             e.printStackTrace();
     }           
     return product;
@@ -87,7 +87,7 @@ public int insert(Product product) {
         psmt.setString(3, product.getDescription());
         result = psmt.executeUpdate();
     } catch (Exception e) {
-       System.err.println("게시글 등록 시, 예외 발생");
+       System.err.println("상품 등록 시, 예외 발생");
             e.printStackTrace();
     }
     return result;
@@ -110,7 +110,7 @@ public int updat(Product product) {
         psmt.setInt(4, product.getNo());         // 4번 ? 에 글번호 매핑
             result = psmt.executeUpdate(); 
     } catch (Exception e) {
-        System.err.println("게시글 수정 시, 예외 발생");
+        System.err.println("상품 수정 시, 예외 발생");
             e.printStackTrace();
     } return result;
 }
@@ -126,7 +126,7 @@ public int delete(int no) {
             psmt.setInt(1, no);
             result = psmt.executeUpdate();
         } catch (Exception e) {
-            System.err.println("게시글 삭제 시, 예외 발생");
+            System.err.println("상품 삭제 시, 예외 발생");
             e.printStackTrace();
         }
         return result;
