@@ -1,3 +1,7 @@
 {
-    "java.dependency.packagePresentation": "hierarchical"
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "product/lib/lombok.jar",
+        "product/lib/ojdbc11.jar"
+    ]
 }

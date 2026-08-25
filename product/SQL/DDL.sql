@@ -1,24 +1,23 @@
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
-CREATE USER aloha IDENTIFIED BY 123456;
-ALTER USER aloha DEFAULT TABLESPACE users;
-ALTER USER aloha QUOTA UNLIMITED ON users;
-GRANT DBA TO aloha;
-
 /*
-상품 번호 no
-상품명 name
-가격 pricd
-설명 description
-등록일자 created_at
-수정일자 updated_at
+    상품번호
+    상품명
+    가격
+    설명
+    등록일자
+    수정일자
 */
-CREATE TABLE product(
-    no NUMBER PRIMARY KEY,
-    name VARCHAR2(100) NOT NULL,
-    price int NOT NULL,
+CREATE TABLE product (
+    no          NUMBER PRIMARY KEY,
+    name        VARCHAR2(100) NOT NULL,
+    price       NUMBER NOT NULL DEFAULT 0 ,
     description CLOB,
-    created_at DATE DEFAULT sysdate,
-    updated_at DATE DEFAULT sysdate
-
+    created_at  DATE NOT NULL DEFAULT SYSDATE,
+    updated_at  DATE NOT NULL DEFAULT SYSDATE 
 );
 
+-- 시퀀스
+CREATE SEQUENCE PRODUCT_SEQ 
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
