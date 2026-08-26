@@ -93,7 +93,7 @@ public int insert(Product product) {
     return result;
 }
 
-public int updat(Product product) {
+public int update(Product product) {
     int result = 0;
 
     String sql = " UPDATE product "

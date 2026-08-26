@@ -51,7 +51,7 @@ public class JDBConnection {
         = new JDBConnection();
     }
 	public List<Product> list() {
-		// TODO Auto-generated method stub
+		
 		throw new UnsupportedOperationException("Unimplemented method 'list'");
 	}
     /**
@@ -60,7 +60,7 @@ public class JDBConnection {
      * @return
      */
     public Product select(int no) {
-        // TODO Auto-generated method stub
+      
         throw new UnsupportedOperationException("Unimplemented method 'select'");
     }
 	

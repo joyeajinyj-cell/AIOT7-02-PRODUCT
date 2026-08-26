@@ -60,7 +60,7 @@ public class Main {
      */
     private static void print(Product product) {
         if ( product == null ) {
-            System.err.println("조회할 수 없는 게시글 입니다.");
+            System.err.println("조회할 수 없는 상품 입니다.");
             return; // 메소드 종료
         }
         int no = product.getNo();
@@ -75,13 +75,13 @@ public class Main {
         String upd = sdf.format(updatedAt);
 
         System.out.println("::::::::::::::::::::::::::::::::");
-        System.out.println(" 상품 번호 : " + no);
-        System.out.println(" 상품 이름 : " + name);
-        System.out.println(" 가격 : " + price);
+        System.out.println(" ★상품 번호 : " + no);
+        System.out.println(" ★상품 이름 : " + name);
+        System.out.println(" ★가격 : " + price);
         System.out.println("=================================");
         System.out.println(" " + description);
-        System.out.println(" 등록일자 : " + reg);
-        System.out.println(" 수정일자 : " + upd);
+        System.out.println(" ★등록일자 : " + reg);
+        System.out.println(" ★수정일자 : " + upd);
         System.out.println("::::::::::::::::::::::::::::::::");
         System.out.println();
 
@@ -105,9 +105,9 @@ public class Main {
         // 상품 등록 요청
         int result = productService.insert(product);
         if (result > 0) {
-            System.out.println("상품이 등록되었습니다.");
+            System.out.println("★상품이 등록되었습니다.");
         }else {
-            System.out.println("상품 등록에 실패하였습니다.");
+            System.out.println("★상품등록에 실패하였습니다.");
         }
 
     }
@@ -116,11 +116,11 @@ public class Main {
      * @return 
      */
     private static Product input() {
-        System.out.print("상품 이름 : ");
+        System.out.print("★상품 이름 : ");
         String name = sc.nextLine();
-        System.out.print("가격 : ");
+        System.out.print("★가격 : ");
         int price = Integer.parseInt(sc.nextLine());
-        System.out.print("설명 : ");
+        System.out.print("★설명 : ");
         String description = sc.nextLine();
 
         Product product = new Product(name, price, description);
@@ -143,9 +143,9 @@ public class Main {
         //상품 수정 요청
         int result = productService.update(product);
         if (result > 0 ) {
-            System.out.println("상품이 수정되었습니다.");
+            System.out.println("★상품이 수정되었습니다.");
         } else {
-            System.out.println("상품 수정에 실패하였습니다.");
+            System.out.println("★상품 수정에 실패하였습니다.");
         }
     }
 
@@ -155,16 +155,16 @@ public class Main {
     public static void delete() {
         System.out.println(":::::::: 게시글 삭제 ::::::::");
 
-        System.out.print("게시글 번호 : ");
+        System.out.print("상품 번호 : ");
         int no = sc.nextInt();
         sc.nextLine();
 
         // 게시글 삭제 요청
         int result = productService.delete(no);
         if (result > 0 ) {
-            System.out.println("상품이 삭제되었습니다.");
+            System.out.println("★상품이 삭제되었습니다.");
         } else {
-            System.out.println("상품 삭제에 실패하였습니다.");
+            System.out.println("★상품 삭제에 실패하였습니다.");
         }
     }
 
